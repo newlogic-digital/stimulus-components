@@ -1,0 +1,31 @@
+{
+  "name": "@newlogic-digital/stimulus-components",
+  "version": "0.0.3",
+  "type": "module",
+  "scripts": {
+    "eslint": "eslint '**/*.js'",
+    "eslint-fix": "eslint '**/*.js' --fix",
+    "publish-next": "npm publish --tag next"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@newlogic-digital/utils-js": "^1.0.0-next.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.7.0",
+    "@types/grecaptcha": "^3.0.9",
+    "neostandard": "^0.11.1",
+    "@newlogic-digital/cookieconsent-js": "^0.2.0",
+    "winduum": "^2.0.0-next.15"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./src/*": "./src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newlogic-digital/stimulus-components.git"
+  }
+}
