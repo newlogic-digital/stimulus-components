@@ -16,7 +16,7 @@ export class CookieConsentCommon extends Controller {
 
 export class CookieConsentDialog extends CookieConsentCommon {
     async connect() {
-        initCookieConsent(this.getCookieConsentItem() ?? [])
+        initCookieConsent(document, this.getCookieConsentItem() ?? [])
 
         if (document.querySelector('.x-cookieconsent-form')) {
             return
@@ -45,7 +45,7 @@ export class CookieConsentDialog extends CookieConsentCommon {
         const { closeDialog } = await import('winduum/src/components/dialog/index.js')
 
         await setCookieConsent(type)
-        initCookieConsent(type)
+        initCookieConsent(document, type)
         await closeDialog(this.element, { remove: true })
     }
 }
