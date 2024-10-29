@@ -1,6 +1,6 @@
 {
   "name": "@newlogic-digital/stimulus-components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "eslint": "eslint '**/*.js'",
