@@ -1,8 +1,8 @@
-.x-control[data-controller~="x-control-select"] {
+.x-control:where([data-controller~="x-control-select"]) {
   position: relative;
   cursor: pointer;
 
-  & select {
+  & :where(select) {
     pointer-events: none;
   }
 
