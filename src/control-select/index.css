@@ -6,7 +6,7 @@
     pointer-events: none;
   }
 
-  & div[aria-hidden] {
+  & :where(div[aria-hidden]) {
     grid-area: x-control;
     will-change: transform;
     border-radius: inherit;
