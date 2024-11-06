@@ -1,5 +1,5 @@
-import { Controller } from "@hotwired/stimulus";
-import { dataset } from "@newlogic-digital/utils-js";
+import { Controller } from '@hotwired/stimulus'
+import { dataset } from '@newlogic-digital/utils-js'
 
 export class Reveal extends Controller {
     static targets = ['item']
@@ -8,7 +8,7 @@ export class Reveal extends Controller {
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.intersectionRatio > 0.1 && !entry.target.hasAttribute('data-in')) {
-                    entry.target.setAttribute('data-in','')
+                    entry.target.setAttribute('data-in', '')
 
                     if (entry.target.dataset.controllerLazyParam) {
                         dataset(entry.target, 'controller').add(entry.target.dataset.controllerLazyParam)
