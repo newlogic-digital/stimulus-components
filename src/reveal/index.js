@@ -10,8 +10,8 @@ export class Reveal extends Controller {
                 if (entry.intersectionRatio > 0.1 && !entry.target.hasAttribute('data-in')) {
                     entry.target.setAttribute('data-in', '')
 
-                    if (entry.target.dataset.controllerLazyParam) {
-                        dataset(entry.target, 'controller').add(entry.target.dataset.controllerLazyParam)
+                    if (entry.target.dataset.lazyController) {
+                        dataset(entry.target, 'controller').add(entry.target.dataset.lazyController)
                     }
                 }
             })
