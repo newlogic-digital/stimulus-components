@@ -18,7 +18,7 @@ export class ReCaptcha extends Controller {
         if (event?.detail?.recaptchaExecuted) return
 
         window.grecaptcha.enterprise.ready(async () => {
-            this.element.gtoken.value = window.grecaptcha.enterprise.execute(this.apiValue, { action: this.actionValue ?? 'form' })
+            this.element.gtoken.value = await window.grecaptcha.enterprise.execute(this.apiValue, { action: this.actionValue ?? 'form' })
             this.element.dispatchEvent(new CustomEvent('submit', { cancelable: true, detail: { recaptchaExecuted: true } }))
         })
     }
