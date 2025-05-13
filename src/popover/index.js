@@ -18,7 +18,7 @@ export class Popover extends PopoverController {
 
     selectDescendant({ currentTarget }) {
         this.autocompleteTarget.setAttribute('aria-activedescendant', currentTarget.id)
-        this.autocompleteTarget.value = currentTarget.textContent
+        this.autocompleteTarget.value = currentTarget.textContent.trim()
         currentTarget.blur()
     }
 }
