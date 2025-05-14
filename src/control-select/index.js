@@ -4,22 +4,25 @@ import { dataset, dispatchCustomEvent } from '@newlogic-digital/utils-js'
 export class ControlSelect extends Controller {
     connect() {
         this.select = this.element.querySelector('select')
-        const option = this.element.querySelectorAll('[data-option]')
+        this.options = this.element.querySelectorAll('[data-option]')
 
-        if (option[0]) {
-            option.forEach((option) => {
-                if (option.dataset.disabled) {
-                    return
-                }
+        dataset(this.select, 'action').add('change->x-control-select#active')
 
-                dataset(option, 'action').add('click->x-control-select#choose', 'keydown.enter->x-control-select#choose')
-            })
-        }
+        this.options.forEach((option) => {
+            if (option.dataset.disabled) return
+
+            dataset(option, 'action').add('click->x-control-select#choose')
+        })
     }
 
     choose({ currentTarget }) {
         this.select.value = currentTarget.dataset.option
         dispatchCustomEvent(this.select)
         document.activeElement.blur()
+    }
+
+    active() {
+        this.options.forEach(option => option.removeAttribute('data-active'))
+        this.element.querySelector(`[data-option="${this.select.value}"]`).setAttribute('data-active', '')
     }
 }
