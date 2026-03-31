@@ -1,6 +1,6 @@
 {
   "name": "@newlogic-digital/stimulus-components",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "type": "module",
   "scripts": {
     "eslint": "eslint '**/*.js'",
@@ -9,14 +9,17 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@newlogic-digital/utils-js": "^1.1.1",
-    "winduum-stimulus": "^2.0.11"
+    "@newlogic-digital/utils-js": "^1.2.0",
+    "winduum-stimulus": "^2.0.13"
   },
   "devDependencies": {
-    "@newlogic-digital/cookieconsent-js": "^1.0.0",
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@googlemaps/js-api-loader": "^2.0.2",
+    "@newlogic-digital/cookieconsent-js": "^1.1.1",
     "@types/grecaptcha": "^3.0.9",
-    "eslint": "^9.19.0",
-    "neostandard": "^0.12.0",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "winduum": "^2.1.0"
   },
   "files": [
